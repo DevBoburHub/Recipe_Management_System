@@ -37,6 +37,7 @@ namespace WindowsFormsApp8
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -69,7 +70,7 @@ namespace WindowsFormsApp8
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 190);
+            this.button1.Location = new System.Drawing.Point(15, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(107, 39);
             this.button1.TabIndex = 3;
@@ -91,7 +92,6 @@ namespace WindowsFormsApp8
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(134, 22);
             this.textBox1.TabIndex = 6;
-            
             // 
             // textBox2
             // 
@@ -109,12 +109,22 @@ namespace WindowsFormsApp8
             this.label4.TabIndex = 8;
             this.label4.Text = "label4";
             // 
+            // comboBoxCustomer
+            // 
+            this.comboBoxCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxCustomer.FormattingEnabled = true;
+            this.comboBoxCustomer.Location = new System.Drawing.Point(91, 178);
+            this.comboBoxCustomer.Name = "comboBoxCustomer";
+            this.comboBoxCustomer.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxCustomer.TabIndex = 9;
+            // 
             // addorder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LawnGreen;
-            this.ClientSize = new System.Drawing.Size(304, 327);
+            this.ClientSize = new System.Drawing.Size(384, 327);
+            this.Controls.Add(this.comboBoxCustomer);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -142,5 +152,6 @@ namespace WindowsFormsApp8
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxCustomer;
     }
 }

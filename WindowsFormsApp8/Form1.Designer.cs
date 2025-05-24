@@ -50,6 +50,7 @@ namespace WindowsFormsApp8
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonAddReview = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
             this.dataGridView8 = new System.Windows.Forms.DataGridView();
@@ -136,7 +137,7 @@ namespace WindowsFormsApp8
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(508, 317);
+            this.tabPage2.Size = new System.Drawing.Size(599, 317);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Orders";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -168,7 +169,7 @@ namespace WindowsFormsApp8
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(508, 317);
+            this.tabPage3.Size = new System.Drawing.Size(599, 317);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Menu Items";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -199,7 +200,7 @@ namespace WindowsFormsApp8
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(508, 317);
+            this.tabPage4.Size = new System.Drawing.Size(599, 317);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Payment";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -222,7 +223,7 @@ namespace WindowsFormsApp8
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(508, 317);
+            this.tabPage5.Size = new System.Drawing.Size(599, 317);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Feedback";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -254,7 +255,7 @@ namespace WindowsFormsApp8
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(508, 317);
+            this.tabPage6.Size = new System.Drawing.Size(599, 317);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Inventory";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -281,14 +282,25 @@ namespace WindowsFormsApp8
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.buttonAddReview);
             this.tabPage7.Controls.Add(this.dataGridView7);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(508, 317);
+            this.tabPage7.Size = new System.Drawing.Size(599, 317);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Reviews";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // buttonAddReview
+            // 
+            this.buttonAddReview.Location = new System.Drawing.Point(388, 270);
+            this.buttonAddReview.Name = "buttonAddReview";
+            this.buttonAddReview.Size = new System.Drawing.Size(75, 23);
+            this.buttonAddReview.TabIndex = 1;
+            this.buttonAddReview.Text = "Add Reviews";
+            this.buttonAddReview.UseVisualStyleBackColor = true;
+            this.buttonAddReview.Click += new System.EventHandler(this.buttonAddReview_Click);
             // 
             // dataGridView7
             // 
@@ -311,7 +323,7 @@ namespace WindowsFormsApp8
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
             this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(508, 317);
+            this.tabPage8.Size = new System.Drawing.Size(599, 317);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Search by Recipes";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -459,6 +471,7 @@ namespace WindowsFormsApp8
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.DataGridView dataGridView8;
         private EventHandler btnSearchRecipes_Click;
+        private System.Windows.Forms.Button buttonAddReview;
     }
 }
 

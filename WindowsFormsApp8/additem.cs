@@ -52,17 +52,13 @@ namespace WindowsFormsApp8
                 {
                     connection.Open();
 
-                    string query = "INSERT INTO menuitem (menuitemid, Name, Price, IsAvailable, Recipe) VALUES (@itid, @Name, @Price, @IsAvailable, @recipe)";
-
-
+                    string query = "INSERT INTO menuitem (name, price, isavailable, recipe) VALUES (@Name, @Price, @IsAvailable, @Recipe)";
                     using (var cmd = new NpgsqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("itid", menuid);
                         cmd.Parameters.AddWithValue("Name", name);
                         cmd.Parameters.AddWithValue("Price", price);
-
-                        cmd.Parameters.AddWithValue("IsAvailable", isAvailable ? true : false );
-                        cmd.Parameters.AddWithValue("recipe", textBox4.Text);
+                        cmd.Parameters.AddWithValue("IsAvailable", isAvailable);
+                        cmd.Parameters.AddWithValue("Recipe", textBox4.Text);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
 
@@ -75,6 +71,7 @@ namespace WindowsFormsApp8
                             MessageBox.Show("Failed to add menu item.");
                         }
                     }
+
                 }
             }
             catch (Exception ex)

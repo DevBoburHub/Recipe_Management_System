@@ -145,6 +145,12 @@
     <Compile Include="addorder.Designer.cs">
       <DependentUpon>addorder.cs</DependentUpon>
     </Compile>
+    <Compile Include="addreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addreview.Designer.cs">
+      <DependentUpon>addreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addorder.resx">
       <DependentUpon>addorder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addreview.resx">
+      <DependentUpon>addreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
