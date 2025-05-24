@@ -33,17 +33,22 @@ namespace WindowsFormsApp8
         {
             this.tabSearchRecipes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonDelete = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteOrder = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteMenuItem = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.buttonDeletePayment = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteFeedback = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
@@ -61,6 +66,8 @@ namespace WindowsFormsApp8
             this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
+            this.buttonDeleteInventory = new System.Windows.Forms.Button();
+            this.buttonDeleteReview = new System.Windows.Forms.Button();
             this.tabSearchRecipes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,6 +105,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonDelete);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
@@ -108,6 +116,16 @@ namespace WindowsFormsApp8
             this.tabPage1.Text = "Customers";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(205, 294);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(145, 23);
+            this.buttonDelete.TabIndex = 2;
+            this.buttonDelete.Text = "Delete Customer";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // dataGridView1
             // 
@@ -132,6 +150,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.buttonDeleteOrder);
             this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -141,6 +160,16 @@ namespace WindowsFormsApp8
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Orders";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteOrder
+            // 
+            this.buttonDeleteOrder.Location = new System.Drawing.Point(185, 287);
+            this.buttonDeleteOrder.Name = "buttonDeleteOrder";
+            this.buttonDeleteOrder.Size = new System.Drawing.Size(122, 31);
+            this.buttonDeleteOrder.TabIndex = 2;
+            this.buttonDeleteOrder.Text = "Delete Order";
+            this.buttonDeleteOrder.UseVisualStyleBackColor = true;
+            this.buttonDeleteOrder.Click += new System.EventHandler(this.buttonDeleteOrder_Click);
             // 
             // button2
             // 
@@ -164,6 +193,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.buttonDeleteMenuItem);
             this.tabPage3.Controls.Add(this.button3);
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -173,6 +203,16 @@ namespace WindowsFormsApp8
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Menu Items";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteMenuItem
+            // 
+            this.buttonDeleteMenuItem.Location = new System.Drawing.Point(203, 295);
+            this.buttonDeleteMenuItem.Name = "buttonDeleteMenuItem";
+            this.buttonDeleteMenuItem.Size = new System.Drawing.Size(134, 23);
+            this.buttonDeleteMenuItem.TabIndex = 2;
+            this.buttonDeleteMenuItem.Text = "Delete Menu Item";
+            this.buttonDeleteMenuItem.UseVisualStyleBackColor = true;
+            this.buttonDeleteMenuItem.Click += new System.EventHandler(this.buttonDeleteMenuItem_Click);
             // 
             // button3
             // 
@@ -196,6 +236,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.buttonDeletePayment);
             this.tabPage4.Controls.Add(this.dataGridView4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
@@ -205,6 +246,16 @@ namespace WindowsFormsApp8
             this.tabPage4.Text = "Payment";
             this.tabPage4.UseVisualStyleBackColor = true;
             this.tabPage4.Click += new System.EventHandler(this.tabPage4_Click);
+            // 
+            // buttonDeletePayment
+            // 
+            this.buttonDeletePayment.Location = new System.Drawing.Point(34, 288);
+            this.buttonDeletePayment.Name = "buttonDeletePayment";
+            this.buttonDeletePayment.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeletePayment.TabIndex = 1;
+            this.buttonDeletePayment.Text = "Delete Payment";
+            this.buttonDeletePayment.UseVisualStyleBackColor = true;
+            this.buttonDeletePayment.Click += new System.EventHandler(this.buttonDeletePayment_Click);
             // 
             // dataGridView4
             // 
@@ -218,6 +269,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.buttonDeleteFeedback);
             this.tabPage5.Controls.Add(this.button5);
             this.tabPage5.Controls.Add(this.dataGridView5);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
@@ -227,6 +279,16 @@ namespace WindowsFormsApp8
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Feedback";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteFeedback
+            // 
+            this.buttonDeleteFeedback.Location = new System.Drawing.Point(199, 287);
+            this.buttonDeleteFeedback.Name = "buttonDeleteFeedback";
+            this.buttonDeleteFeedback.Size = new System.Drawing.Size(135, 30);
+            this.buttonDeleteFeedback.TabIndex = 2;
+            this.buttonDeleteFeedback.Text = "Delete Feedback";
+            this.buttonDeleteFeedback.UseVisualStyleBackColor = true;
+            this.buttonDeleteFeedback.Click += new System.EventHandler(this.buttonDeleteFeedback_Click);
             // 
             // button5
             // 
@@ -250,6 +312,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.buttonDeleteInventory);
             this.tabPage6.Controls.Add(this.button6);
             this.tabPage6.Controls.Add(this.dataGridView6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
@@ -282,6 +345,7 @@ namespace WindowsFormsApp8
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.buttonDeleteReview);
             this.tabPage7.Controls.Add(this.buttonAddReview);
             this.tabPage7.Controls.Add(this.dataGridView7);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
@@ -405,6 +469,26 @@ namespace WindowsFormsApp8
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // buttonDeleteInventory
+            // 
+            this.buttonDeleteInventory.Location = new System.Drawing.Point(225, 294);
+            this.buttonDeleteInventory.Name = "buttonDeleteInventory";
+            this.buttonDeleteInventory.Size = new System.Drawing.Size(120, 23);
+            this.buttonDeleteInventory.TabIndex = 2;
+            this.buttonDeleteInventory.Text = "Delete Inventory";
+            this.buttonDeleteInventory.UseVisualStyleBackColor = true;
+            this.buttonDeleteInventory.Click += new System.EventHandler(this.buttonDeleteInventory_Click);
+            // 
+            // buttonDeleteReview
+            // 
+            this.buttonDeleteReview.Location = new System.Drawing.Point(514, 270);
+            this.buttonDeleteReview.Name = "buttonDeleteReview";
+            this.buttonDeleteReview.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteReview.TabIndex = 2;
+            this.buttonDeleteReview.Text = "DeleteReview";
+            this.buttonDeleteReview.UseVisualStyleBackColor = true;
+            this.buttonDeleteReview.Click += new System.EventHandler(this.buttonDeleteReview_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -472,6 +556,13 @@ namespace WindowsFormsApp8
         private System.Windows.Forms.DataGridView dataGridView8;
         private EventHandler btnSearchRecipes_Click;
         private System.Windows.Forms.Button buttonAddReview;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonDeleteFeedback;
+        private System.Windows.Forms.Button buttonDeleteOrder;
+        private System.Windows.Forms.Button buttonDeletePayment;
+        private System.Windows.Forms.Button buttonDeleteMenuItem;
+        private System.Windows.Forms.Button buttonDeleteInventory;
+        private System.Windows.Forms.Button buttonDeleteReview;
     }
 }
 

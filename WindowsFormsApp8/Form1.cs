@@ -273,5 +273,388 @@ namespace WindowsFormsApp8
                 }
             }
         }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int customerId = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells["customerid"].Value);
+
+                var result = MessageBox.Show($"Are you sure you want to delete customer ID {customerId}?",
+                                             "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.Yes)
+                {
+                    try
+                    {
+                        using (var conn = new NpgsqlConnection(connString))
+                        {
+                            conn.Open();
+                            string deleteQuery = "DELETE FROM customer WHERE customerid = @id";
+
+                            using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@id", customerId);
+                                int rowsAffected = cmd.ExecuteNonQuery();
+
+                                if (rowsAffected > 0)
+                                {
+                                    MessageBox.Show("Customer deleted successfully.");
+                                    RefreshCustomerGrid(); // yozamiz 3-qadamda
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Failed to delete customer.");
+                                }
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex.Message}");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a customer row to delete.");
+            }
+        }
+
+        private void RefreshCustomerGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM customer";
+
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+        }
+
+        private void buttonDeleteFeedback_Click(object sender, EventArgs e)
+        {
+            if (dataGridView5.SelectedRows.Count > 0)
+            {
+                int feedbackId = Convert.ToInt32(dataGridView5.SelectedRows[0].Cells["feedbackid"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM feedback WHERE feedbackid = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", feedbackId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Feedback deleted successfully.");
+                            RefreshFeedbackGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete feedback.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a feedback row to delete.");
+            }
+        }
+
+        private void RefreshFeedbackGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM feedback";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView5.DataSource = dt;
+                }
+            }
+        }
+
+        private void buttonDeleteOrder_Click(object sender, EventArgs e)
+        {
+            if (dataGridView2.SelectedRows.Count > 0)
+            {
+                int orderDetailsId = Convert.ToInt32(dataGridView2.SelectedRows[0].Cells["orderdetailsid"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM orderdetails WHERE orderdetailsid = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", orderDetailsId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Order deleted successfully.");
+                            RefreshOrderGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete order.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an order row to delete.");
+            }
+        }
+
+        private void RefreshOrderGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+                string query = "SELECT * FROM orderdetails";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView2.DataSource = dt;
+                }
+            }
+        }
+
+        private void buttonDeletePayment_Click(object sender, EventArgs e)
+        {
+            if (dataGridView4.SelectedRows.Count > 0)
+            {
+                int paymentId = Convert.ToInt32(dataGridView4.SelectedRows[0].Cells["paymentid"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM payment WHERE paymentid = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", paymentId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Payment deleted successfully.");
+                            RefreshPaymentGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete payment.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a payment row to delete.");
+            }
+        }
+
+        private void RefreshPaymentGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM payment";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView4.DataSource = dataTable;
+                }
+            }
+        }
+
+        private void buttonDeleteMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView3.SelectedRows.Count > 0)
+            {
+                int menuItemId = Convert.ToInt32(dataGridView3.SelectedRows[0].Cells["menuitemid"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM menuitem WHERE menuitemid = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", menuItemId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Menu item deleted successfully.");
+                            RefreshMenuItemGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete menu item.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a menu item row to delete.");
+            }
+        }
+
+        private void RefreshMenuItemGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM menuitem";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView3.DataSource = dataTable;
+                }
+            }
+        }
+
+        private void buttonDeleteInventory_Click(object sender, EventArgs e)
+        {
+            if (dataGridView6.SelectedRows.Count > 0)
+            {
+                int inventoryId = Convert.ToInt32(dataGridView6.SelectedRows[0].Cells["inventoryid"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM inventory WHERE inventoryid = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", inventoryId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Inventory item deleted successfully.");
+                            RefreshInventoryGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete inventory item.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select an inventory row to delete.");
+            }
+        }
+
+        private void RefreshInventoryGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = "SELECT * FROM inventory";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+                    dataGridView6.DataSource = dataTable;
+                }
+            }
+        }
+
+        private void buttonDeleteReview_Click(object sender, EventArgs e)
+        {
+            if (dataGridView7.SelectedRows.Count > 0)
+            {
+                int reviewId = Convert.ToInt32(dataGridView7.SelectedRows[0].Cells["id"].Value);
+
+                using (var conn = new NpgsqlConnection(connString))
+                {
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM reviews WHERE id = @id";
+
+                    using (var cmd = new NpgsqlCommand(deleteQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@id", reviewId);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Review deleted successfully.");
+                            RefreshReviewsGrid();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to delete review.");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a review row to delete.");
+            }
+        }
+
+        private void RefreshReviewsGrid()
+        {
+            using (var conn = new NpgsqlConnection(connString))
+            {
+                conn.Open();
+
+                string query = @"SELECT r.id, c.name AS customer, m.name AS menuitem, r.comment, r.rate 
+                         FROM reviews r
+                         JOIN customer c ON r.customerid = c.customerid
+                         JOIN menuitem m ON r.menuitemid = m.menuitemid";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var adapter = new NpgsqlDataAdapter(cmd))
+                {
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView7.DataSource = dt;
+                }
+            }
+        }
     }
 }
