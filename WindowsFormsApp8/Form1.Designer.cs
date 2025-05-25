@@ -52,9 +52,11 @@ namespace WindowsFormsApp8
             this.button5 = new System.Windows.Forms.Button();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteInventory = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonDeleteReview = new System.Windows.Forms.Button();
             this.buttonAddReview = new System.Windows.Forms.Button();
             this.dataGridView7 = new System.Windows.Forms.DataGridView();
             this.tabPage8 = new System.Windows.Forms.TabPage();
@@ -66,8 +68,6 @@ namespace WindowsFormsApp8
             this.Name = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
-            this.buttonDeleteInventory = new System.Windows.Forms.Button();
-            this.buttonDeleteReview = new System.Windows.Forms.Button();
             this.tabSearchRecipes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -323,6 +323,16 @@ namespace WindowsFormsApp8
             this.tabPage6.Text = "Inventory";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // buttonDeleteInventory
+            // 
+            this.buttonDeleteInventory.Location = new System.Drawing.Point(225, 294);
+            this.buttonDeleteInventory.Name = "buttonDeleteInventory";
+            this.buttonDeleteInventory.Size = new System.Drawing.Size(120, 23);
+            this.buttonDeleteInventory.TabIndex = 2;
+            this.buttonDeleteInventory.Text = "Delete Inventory";
+            this.buttonDeleteInventory.UseVisualStyleBackColor = true;
+            this.buttonDeleteInventory.Click += new System.EventHandler(this.buttonDeleteInventory_Click);
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(16, 295);
@@ -355,6 +365,16 @@ namespace WindowsFormsApp8
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Reviews";
             this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // buttonDeleteReview
+            // 
+            this.buttonDeleteReview.Location = new System.Drawing.Point(493, 270);
+            this.buttonDeleteReview.Name = "buttonDeleteReview";
+            this.buttonDeleteReview.Size = new System.Drawing.Size(100, 23);
+            this.buttonDeleteReview.TabIndex = 2;
+            this.buttonDeleteReview.Text = "DeleteReview";
+            this.buttonDeleteReview.UseVisualStyleBackColor = true;
+            this.buttonDeleteReview.Click += new System.EventHandler(this.buttonDeleteReview_Click);
             // 
             // buttonAddReview
             // 
@@ -468,26 +488,6 @@ namespace WindowsFormsApp8
             this.button4.Text = "Refresh";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // buttonDeleteInventory
-            // 
-            this.buttonDeleteInventory.Location = new System.Drawing.Point(225, 294);
-            this.buttonDeleteInventory.Name = "buttonDeleteInventory";
-            this.buttonDeleteInventory.Size = new System.Drawing.Size(120, 23);
-            this.buttonDeleteInventory.TabIndex = 2;
-            this.buttonDeleteInventory.Text = "Delete Inventory";
-            this.buttonDeleteInventory.UseVisualStyleBackColor = true;
-            this.buttonDeleteInventory.Click += new System.EventHandler(this.buttonDeleteInventory_Click);
-            // 
-            // buttonDeleteReview
-            // 
-            this.buttonDeleteReview.Location = new System.Drawing.Point(514, 270);
-            this.buttonDeleteReview.Name = "buttonDeleteReview";
-            this.buttonDeleteReview.Size = new System.Drawing.Size(75, 23);
-            this.buttonDeleteReview.TabIndex = 2;
-            this.buttonDeleteReview.Text = "DeleteReview";
-            this.buttonDeleteReview.UseVisualStyleBackColor = true;
-            this.buttonDeleteReview.Click += new System.EventHandler(this.buttonDeleteReview_Click);
             // 
             // Form1
             // 
